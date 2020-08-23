@@ -1,0 +1,88 @@
+
+<div class="title">
+  <label> EMPLOYEES </label>
+</div>
+<div class="content">
+      <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>FULL NAME</th>
+                <th>FUNCTIONS</th>
+                <th>ID BOSS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="center" *ngFor="let employee of employees; let x = index;">
+                    <td>{{employee.id}}</td>
+                    <td>{{employee.fullname}}</td>
+                    <td>{{employee.functions}}</td>
+                    <td>{{idBoss[x+1]}}</td>
+                    <td id="buttons">
+                        <button class="btn btn-warning" style="margin-left: 1vw;" (click)="update(employee.id)">Editar</button>
+                        <button class="btn btn-danger" style="margin-left: 1vw;" (click)="delete(employee.id)" >Delete</button>
+                    </td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="agregar">
+        <button class="btn btn-success" style="margin-left: 1vw;" (click)="Agregar(1)">Agregar</button>
+    </div>
+    <div *ngIf="section==0">
+        
+    </div>
+    <div id="general" *ngIf="section==1">
+        <div id="Form">
+            <form>
+                <div id="data">
+                    <label>Id : </label>
+                    <input type="number" required #id>
+                </div>
+                <div id="data">
+                    <label>Fullname : </label>
+                    <input type="text" required #fullname>
+                </div>
+                <div id="data">
+                    <label>Functions : </label>
+                    <input type="text" required #functions>
+                </div>
+                <div id="data">
+                    <label>Id Boss : </label>
+                    <input type="number" #idboss>
+                </div>
+            </form>
+            <div id="botonera">
+                <button class="btn btn-success" style="margin-left: 1vw;" (click)="add(id.value, fullname.value, functions.value, idboss.value); id.value=''; fullname.value=''; functions.value=''; idboss.value=''" >Agregar</button>
+                <button class="btn btn-danger" style="margin-left: 1vw;" (click)="Agregar(0)">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    <div id="general" *ngIf="section==2">
+        <div id="Form">
+            <form>
+                <div id="data">
+                    <label>Id : </label>
+                    <input type="number" [(ngModel)]="updateUser.id" name="id" required #id>
+                </div>
+                <div id="data">
+                    <label>Fullname : </label>
+                    <input type="text" [(ngModel)]="updateUser.fullname" name="fullname" required #fullname>
+                </div>
+                <div id="data">
+                    <label>Functions : </label>
+                    <input type="text" [(ngModel)]="updateUser.functions" name="functions" required #functions>
+                </div>
+                <div id="data">
+                    <label>Id Boss : </label>
+                    <input type="number" [(ngModel)]="updateUser.idboss" name="idboss" #idboss >
+                </div>
+            </form>
+            <div id="botonera">
+                <button class="btn btn-warning" style="margin-left: 1vw;" (click)="edit()">Editar</button>
+               <button class="btn btn-danger" style="margin-left: 1vw;" (click)="Agregar(0)">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,71 @@
+.title{
+    font-family: MediumF;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2vw;
+    color: aliceblue;
+    background:#0a79f5;
+    margin: 2vw;
+    label{
+        margin-left: 2vw;
+    }
+}
+.content{
+    width: 80vw;
+    margin:auto;
+    table{
+        thead{
+            .center{
+
+            }
+        }
+        tbody{
+            tr{
+                td#buttons{
+                    width: 20vw;
+                }
+            }
+        }
+    }
+    div#agregar{
+        text-align: right;
+        button{
+            margin-right: 8vw;
+        }
+    }
+    div#general{
+        margin: auto;
+        padding-top:1vw ;
+        div#Form{
+            margin: auto;
+            border:#498be4 solid 2px;
+            border-radius: 10px;
+            width: 30vw;
+            display: flex;
+            flex-direction: column;
+            form{
+                padding:3vw;
+                div#data{
+                    margin-top: 5px;
+                    justify-content: center;
+                    align-items: center;
+                   label{
+                       margin-left: 10px;
+                       font-family: MediumF;
+                   } 
+                   input{
+                       margin-left: 1vw;
+                       border-radius: 20px;
+                       outline: none;
+                       text-align: center;
+                   }
+                }
+            }
+            div#botonera{
+                text-align: right;
+                padding: 1vw;
+            }
+        }
+        
+    }
+}
